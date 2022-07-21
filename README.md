@@ -1,10 +1,10 @@
 # vue-demo
 
-> vue demo project
+> 一个简陋的 vue demo project，他还很年轻，我相信他会长大的 hhh
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 

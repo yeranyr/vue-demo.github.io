@@ -1,17 +1,20 @@
 var path = require("path");
 var webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
     main: "./src/main.js",
     login: "./src/login.js", // 增加入口
-    nav: "./src/nav.js" // 增加入口
+    nav: "./src/nav.js", // 增加入口
+    register: "./src/register.js" // 增加入口
   },
   output: {
     path: path.resolve(__dirname, "./dist"), //路径
     publicPath: "/dist/", //代理路径
     filename: "[name].js" //build为各自文件
   },
+
   module: {
     rules: [
       {

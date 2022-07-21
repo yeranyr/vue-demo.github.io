@@ -13,9 +13,10 @@
       <el-form-item label="密码" prop="password">
         <el-input type="password" v-model="loginForm.password"></el-input>
       </el-form-item>
-      <el-form-item>
+      <el-form-item style="margin-left: -40px;">
         <el-button type="primary" @click="submitForm">登录</el-button>
         <el-button @click="resetForm">重置</el-button>
+        <el-button @click="toRegister">注册</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -26,8 +27,8 @@ export default {
   data() {
     return {
       loginForm: {
-        username: "admin",
-        password: "123456"
+        username: "",
+        password: ""
       },
       rules: {
         username: [
@@ -37,8 +38,8 @@ export default {
           { required: true, message: "用户名为必填项", trigger: "blur" },
           {
             min: 3,
-            max: 6,
-            message: "用户名长度在 3 到 6 个字符",
+            max: 10,
+            message: "用户名长度在 3 到 10 个字符",
             trigger: "blur"
           }
         ],
@@ -59,7 +60,7 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           console.log("right submit");
-          alert("密码正确，登录成功");
+          alert("登录成功");
           this.islogin();
         } else {
           alert("密码错误，请检查用户名或密码");
@@ -73,6 +74,9 @@ export default {
     },
     resetForm() {
       this.$refs.loginForm.resetFields();
+    },
+    toRegister() {
+      window.location.href = "./register.html";
     }
   }
 };
